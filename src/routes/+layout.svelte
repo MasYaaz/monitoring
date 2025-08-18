@@ -3,7 +3,8 @@
 	import favicon from '$lib/assets/logo.svg';
 	import faviconDark from '$lib/assets/logo-dark.svg';
 	import { isDark } from '$lib/store/darkMode';
-	import { Moon, Sun } from 'lucide-svelte';
+	import { Moon, Sun, Undo2 } from 'lucide-svelte';
+	import { page } from '$app/stores';
 
 	let dark = $derived($isDark);
 
@@ -20,12 +21,21 @@
 	<link rel="icon" href={faviconDark} media="(prefers-color-scheme: dark)" />
 </svelte:head>
 
-<button class="fixed top-3 left-4 hover:scale-105 dark:text-white" onclick={toggleDark}>
+<button class="fixed top-3 right-4 hover:scale-105 dark:text-white" onclick={toggleDark}>
 	{#if !dark}
 		<Sun />
 	{:else}
 		<Moon />
 	{/if}
 </button>
+
+{#if $page.url.pathname !== "/"}
+<a
+	href="/"
+	class="absolute top-3 left-4 hover:scale-105 dark:text-white"
+>
+	<Undo2 />
+</a>
+{/if}
 
 {@render children?.()}
