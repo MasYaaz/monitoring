@@ -5,6 +5,7 @@
 	import { isDark } from '$lib/store/darkMode';
 	import { Moon, Sun, Undo2 } from 'lucide-svelte';
 	import { page } from '$app/stores';
+	import { fade, fly } from 'svelte/transition';
 
 	let dark = $derived($isDark);
 
@@ -38,4 +39,11 @@
 </a>
 {/if}
 
-{@render children?.()}
+{#key $page.url.pathname}
+	<div
+		in:fade={{ duration: 500 }}
+		class="w-full"
+	>
+		{@render children?.()}
+	</div>
+{/key}
