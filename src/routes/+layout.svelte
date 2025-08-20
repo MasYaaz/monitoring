@@ -5,7 +5,7 @@
 	import { isDark } from '$lib/store/darkMode';
 	import { Moon, Sun, Undo2 } from 'lucide-svelte';
 	import { page } from '$app/stores';
-	import { fade, fly } from 'svelte/transition';
+	import { fade } from 'svelte/transition';
 
 	let dark = $derived($isDark);
 
@@ -30,10 +30,10 @@
 	{/if}
 </button>
 
-{#if $page.url.pathname !== "/"}
+{#if $page.url.pathname !== "/" && $page.url.pathname !== "/admin"}
 <a
 	href="/"
-	class="absolute top-3 left-4 hover:scale-105 dark:text-white"
+	class="fixed top-3 left-4 hover:scale-105 dark:text-white"
 >
 	<Undo2 />
 </a>
@@ -41,8 +41,8 @@
 
 {#key $page.url.pathname}
 	<div
-		in:fade={{ duration: 500 }}
-		class="w-full"
+		in:fade={{ duration: 300 }}
+		class="w-full dark:bg-black"
 	>
 		{@render children?.()}
 	</div>
