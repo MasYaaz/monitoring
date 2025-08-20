@@ -44,6 +44,6 @@
 		in:fade={{ duration: 300 }}
 		class="w-full dark:bg-black"
 	>
-		{@render children?.()}
+		{@render children()}
 	</div>
 {/key}
