@@ -4,17 +4,12 @@ import { writable } from 'svelte/store';
 export const kedatanganPondok = writable<any[]>([]);
 export const belumDijemput = writable<any[]>([]);
 
-export const loading = writable(true);
-
 export async function loadData() {
-	loading.set(true);
 	const { data: pd } = await supabase.from('kedatangan_pondok').select('*').order('id');
 	const { data: sb } = await supabase.from('belum_dijemput').select('*').order('id');
 
 	if (pd) kedatanganPondok.set(pd);
 	if (sb) belumDijemput.set(sb);
-
-	loading.set(false);
 }
 
 export function subscribeRealtime() {

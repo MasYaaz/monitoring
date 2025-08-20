@@ -42,13 +42,13 @@
 			class="grid w-full grid-cols-3 gap-4 pt-3 text-center font-heading text-xs lg:gap-10 lg:text-lg"
 		>
 			<a
-				href="/tatatertib"
+				href="/TataTertib"
 				class="col-span-1 flex flex-col items-center justify-center gap-1 rounded-xl bg-green-300 px-2 py-5 font-semibold uppercase shadow-lg transition-transform duration-200 hover:scale-105 lg:py-10"
 			>
 				<NotebookPen size="50" />Prosedur & Tata Tertib
 			</a>
 			<a
-				href="/denah"
+				href="/Denah"
 				class="col-span-1 flex flex-col items-center justify-center rounded-xl bg-green-300 px-2 py-5 font-semibold uppercase shadow-lg transition-transform duration-200 hover:scale-105"
 			>
 				<MapPinned size="50" />
@@ -56,7 +56,7 @@
 				Al-Akbar
 			</a>
 			<a
-				href="/jadwalkedatangan"
+				href="/JadwalKedatangan"
 				class="col-span-1 flex flex-col items-center justify-center gap-1 rounded-xl bg-green-300 px-2 py-5 font-semibold uppercase shadow-lg transition-transform duration-200 hover:scale-105"
 			>
 				<Bus size="50" />Jadwal Kedatangan

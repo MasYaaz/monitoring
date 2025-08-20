@@ -39,4 +39,11 @@
 </a>
 {/if}
 
-{@render children?.()}
+{#key $page.url.pathname}
+	<div
+		in:fade={{ duration: 300 }}
+		class="w-full dark:bg-black"
+	>
+		{@render children?.()}
+	</div>
+{/key}
