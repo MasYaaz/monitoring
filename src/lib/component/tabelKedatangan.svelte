@@ -3,7 +3,7 @@
 	import { Trash } from 'lucide-svelte';
 </script>
 
-<p class="mt-5 mb-1 text-sm font-bold uppercase lg:text-lg dark:text-white">
+<p class="mt-5 mb-1 text-sm font-bold uppercase text-center lg:text-lg dark:text-white">
 	Pondok Yang Sudah Datang
 </p>
 <table class="w-full overflow-hidden rounded-lg text-left text-sm">
@@ -32,7 +32,7 @@
 					<td class="py-2">{p.jam}</td>
 					<td class="w-20 py-2">
 						<button onclick={() => deletePondok(p.id)}>
-							<Trash size="20" class="hover:scale-105 hover:text-red-600 dark:text-white" />
+							<Trash size="20" class="hover:scale-105 hover:text-red-600" />
 						</button>
 					</td>
 				</tr>

@@ -1,14 +1,11 @@
 <script lang="ts">
-	import { Bus, Undo2, UserPlus, UserRoundCog } from 'lucide-svelte';
+	import { Bus, UserPlus, UserRoundCog } from 'lucide-svelte';
 	import { writable } from 'svelte/store';
 	import { fade } from 'svelte/transition';
-	import { onMount } from 'svelte';
 	import { supabase } from '$lib/connection/supabaseClient';
 	import {
 		belumDijemput,
 		kedatanganPondok,
-		loadData,
-		subscribeRealtime
 	} from '$lib/store/tabelStore';
 	import TabelSantriCeklis from '$lib/component/tabelSantriCeklis.svelte';
 	import TabelKedatangan from '$lib/component/tabelKedatangan.svelte';
@@ -17,11 +14,6 @@
 
 	let pondokInput = { pondok: '', jam: '' };
 	let santriInput = { nama: '', kelas: '', pondok: '' };
-
-	onMount(() => {
-		loadData();
-		subscribeRealtime();
-	});
 
 	async function tambahPondok() {
 		const { data, error } = await supabase
@@ -52,14 +44,6 @@
 	}
 </script>
 
-{#if $halaman !== 'dashboard'}
-	<button
-		onclick={() => ($halaman = 'dashboard')}
-		class="fixed top-3 left-4 hover:scale-105 dark:text-white"
-	>
-		<Undo2 />
-	</button>
-{/if}
 <main class="w-screen px-4 md:px-6 lg:px-12 xl:px-24">
 	<div class="flex min-h-screen w-full flex-col items-center py-5">
 		<div class="flex w-full items-center justify-center px-5 py-6 lg:py-10 dark:text-white">
@@ -95,11 +79,11 @@
 		{:else if $halaman === 'tambah orang'}
 			<div in:fade={{ duration: 300 }} class="flex w-full flex-col items-center gap-5">
 				<!-- FORM SANTRI -->
-				<div class="w-full max-w-4xl rounded-xl p-5 shadow-md dark:text-white">
-					<h2 class="mb-4 w-full text-center font-bold uppercase lg:text-2xl">
+				<div class="w-full max-w-4xl gap-5 rounded-xl p-5 shadow-md">
+					<h2 class="mb-4 w-full text-center font-bold uppercase lg:text-2xl dark:text-white">
 						Tambah Santri/Santriwati Belum Dijemput
 					</h2>
-					<form onsubmit={tambahSantri} class="space-y-3 text-lg">
+					<form onsubmit={tambahSantri} class="space-y-3 text-lg dark:text-white">
 						<input
 							type="text"
 							placeholder="Nama Lengkap"
@@ -128,19 +112,17 @@
 							Tambah
 						</button>
 					</form>
-				</div>
-				<div class="w-full max-w-4xl">
 					<TabelSantriCeklis />
 				</div>
 			</div>
 		{:else if $halaman === 'update kedatangan'}
 			<div in:fade={{ duration: 300 }} class="flex w-full flex-col items-center">
 				<!-- FORM PONDOK -->
-				<div class="w-full max-w-4xl rounded-xl p-5 shadow-md dark:text-white">
-					<h2 class="mb-4 w-full text-center font-bold uppercase lg:text-2xl">
+				<div class="w-full max-w-4xl rounded-xl p-5 shadow-md">
+					<h2 class="mb-4 w-full text-center font-bold uppercase lg:text-2xl dark:text-white">
 						Update Data Pondok yang Sudah Datang
 					</h2>
-					<form onsubmit={tambahPondok} class="w-full space-y-3 lg:text-lg">
+					<form onsubmit={tambahPondok} class="w-full space-y-3 lg:text-lg dark:text-white">
 						<input
 							type="text"
 							placeholder="Nama Pondok"
@@ -162,8 +144,6 @@
 							Tambah
 						</button>
 					</form>
-				</div>
-				<div class="w-full max-w-4xl">
 					<TabelKedatangan />
 				</div>
 			</div>

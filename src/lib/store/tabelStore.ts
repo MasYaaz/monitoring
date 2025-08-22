@@ -1,15 +1,42 @@
 import { supabase } from '$lib/connection/supabaseClient';
 import { writable } from 'svelte/store';
+import { pushNotification } from './notif';
 
 export const kedatanganPondok = writable<any[]>([]);
 export const belumDijemput = writable<any[]>([]);
+export const loading = writable(false);
 
-export async function loadData() {
-	const { data: pd } = await supabase.from('kedatangan_pondok').select('*').order('id');
-	const { data: sb } = await supabase.from('belum_dijemput').select('*').order('id');
+export async function loadKedatanganPondok() {
+	loading.set(true);
+	const { data: pd } = await supabase
+		.from('kedatangan_pondok')
+		.select('*')
+		.order('id');
 
 	if (pd) kedatanganPondok.set(pd);
+	loading.set(false);
+	return pd;
+}
+
+// Ambil data belum dijemput
+export async function loadBelumDijemput() {
+	loading.set(true);
+	const { data: sb } = await supabase
+		.from('belum_dijemput')
+		.select('*')
+		.order('id');
+
 	if (sb) belumDijemput.set(sb);
+	loading.set(false);
+	return sb;
+}
+
+type KedatanganPondok = {
+	pondok: string;
+};
+
+type Santri = {
+	nama: string;
 }
 
 export function subscribeRealtime() {
@@ -19,8 +46,14 @@ export function subscribeRealtime() {
 		.on(
 			'postgres_changes',
 			{ event: '*', schema: 'public', table: 'kedatangan_pondok' },
-			async () => {
-				await loadData(); // refresh data kalau ada perubahan
+			async (payload) => {
+				await loadKedatanganPondok(); // refresh data kalau ada perubahan
+
+				const kedatangan = payload.new as KedatanganPondok;
+
+				if (kedatangan?.pondok) {
+					pushNotification(`Selamat Datang ${kedatangan.pondok}`);
+				}
 			}
 		)
 		.subscribe();
@@ -28,9 +61,22 @@ export function subscribeRealtime() {
 	// Belum Dijemput
 	supabase
 		.channel('belum_dijemput_changes')
-		.on('postgres_changes', { event: '*', schema: 'public', table: 'belum_dijemput' }, async () => {
-			await loadData();
-		})
+		.on(
+			'postgres_changes',
+			{ event: '*', schema: 'public', table: 'belum_dijemput' },
+			async (payload) => {
+				await loadBelumDijemput();
+
+				const santriB = payload.new as Santri;
+				const santriD = payload.old as Santri;
+				if (payload.eventType === 'INSERT') {
+					pushNotification(`${santriB?.nama} Belum Di Jemput`);
+				}
+				if (payload.eventType === 'DELETE') {
+					pushNotification(`${santriD?.nama} Sudah Di Jemput.`);
+				}
+			}
+		)
 		.subscribe();
 }
 

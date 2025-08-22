@@ -3,7 +3,7 @@
 	import { Check } from 'lucide-svelte';
 </script>
 
-<p class="mt-5 text-sm font-bold uppercase lg:text-lg dark:text-white">
+<p class="mt-5 text-center text-sm font-bold uppercase lg:text-lg dark:text-white">
 	Santri/Santriwati Yang Belum Dijemput
 </p>
 <table class="w-full overflow-hidden rounded-lg text-left text-sm">
@@ -35,7 +35,7 @@
 					<td class="px-2 py-2">{b.pondok}</td>
 					<td class="px-2 py-2"
 						><button onclick={() => deleteSantri(b.id)}>
-							<Check size="20" class="hover:scale-105  hover:text-green-800 dark:text-white" />
+							<Check size="20" class="hover:scale-105  hover:text-green-800" />
 						</button></td
 					>
 				</tr>

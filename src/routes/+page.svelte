@@ -3,18 +3,7 @@
 	import logoLight from '$lib/assets/logo S1.png';
 	import logoDark from '$lib/assets/logo S2.png';
 	import { isDark } from '$lib/store/darkMode';
-	import {
-		belumDijemput,
-		kedatanganPondok,
-		loadData,
-		subscribeRealtime
-	} from '$lib/store/tabelStore';
-	import { onMount } from 'svelte';
-
-	onMount(() => {
-		loadData();
-		subscribeRealtime();
-	});
+	import { belumDijemput, kedatanganPondok, loading } from '$lib/store/tabelStore';
 </script>
 
 <main class="flex w-screen justify-center px-4 md:px-6 lg:px-12 xl:px-24">
@@ -42,91 +31,99 @@
 			class="grid w-full grid-cols-3 gap-4 pt-3 text-center font-heading text-xs lg:gap-10 lg:text-lg"
 		>
 			<a
-				href="/TataTertib"
+				href="/tatatertib"
 				class="col-span-1 flex flex-col items-center justify-center gap-1 rounded-xl bg-green-300 px-2 py-5 font-semibold uppercase shadow-lg transition-transform duration-200 hover:scale-105 lg:py-10"
 			>
 				<NotebookPen size="50" />Prosedur & Tata Tertib
 			</a>
 			<a
-				href="/Denah"
+				href="/denah"
 				class="col-span-1 flex flex-col items-center justify-center rounded-xl bg-green-300 px-2 py-5 font-semibold uppercase shadow-lg transition-transform duration-200 hover:scale-105"
 			>
 				<MapPinned size="50" />
-				<p class="mt-1 text-[10px] lg:text-lg">Denah Masjid</p>
-				Al-Akbar
+				<p class="mt-1 w-16 lg:w-full lg:text-lg">Denah Al-Akbar</p>
 			</a>
 			<a
-				href="/JadwalKedatangan"
+				href="/jadwalkedatangan"
 				class="col-span-1 flex flex-col items-center justify-center gap-1 rounded-xl bg-green-300 px-2 py-5 font-semibold uppercase shadow-lg transition-transform duration-200 hover:scale-105"
 			>
 				<Bus size="50" />Jadwal Kedatangan
 			</a>
 		</div>
-		<p class="mt-5 mb-1 text-sm font-bold uppercase lg:text-lg dark:text-white">
-			Pondok Yang Sudah Datang
-		</p>
-		<table class="w-full overflow-hidden rounded-lg text-left text-sm">
-			<thead
-				class="bg-green-300 font-heading text-xs font-normal text-black uppercase lg:text-base"
-			>
-				<tr class="text-center">
-					<th class="py-1">No</th>
-					<th class="py-1">Pondok</th>
-					<th class="py-1">Jam Kedatangan</th>
-					<th class="py-1"></th>
-				</tr>
-			</thead>
-			<tbody class="bg-gray-100 font-heading text-xs lg:text-base">
-				{#if $kedatanganPondok.length > 0}
-					{#each $kedatanganPondok as p, i}
-						<tr class="text-center">
-							<td class="px-3 py-2">{i + 1}</td>
-							<td class="py-2">{p.pondok}</td>
-							<td class="py-2">{p.jam}</td>
-						</tr>
-					{/each}
-				{:else}
+		{#if $loading === true}
+			<div class="flex w-full flex-col items-center justify-center p-10">
+				<div
+					class="h-12 w-12 animate-spin rounded-full border-4 border-green-800 border-t-transparent dark:border-white"
+				></div>
+				<p role="alert" class="text-lg font-semibold text-gray-700">Sedang memproses...</p>
+			</div>
+		{:else}
+			<p class="mt-5 mb-1 text-sm font-bold uppercase lg:text-lg dark:text-white">
+				Pondok Yang Sudah Datang
+			</p>
+			<table class="w-full overflow-hidden rounded-lg text-left text-sm">
+				<thead
+					class="bg-green-300 font-heading text-xs font-normal text-black uppercase lg:text-base"
+				>
 					<tr class="text-center">
-						<td class="px-3 py-2">-</td>
-						<td class="py-2">None</td>
-						<td class="py-2">None</td>
+						<th class="py-1">No</th>
+						<th class="py-1">Pondok</th>
+						<th class="py-1">Jam Kedatangan</th>
+						<th class="py-1"></th>
 					</tr>
-				{/if}
-			</tbody>
-		</table>
-		<p class="mt-5 text-sm font-bold uppercase lg:text-lg dark:text-white">
-			Santri/Santriwati Yang Belum Dijemput
-		</p>
-		<table class="w-full overflow-hidden rounded-lg text-left text-sm">
-			<thead
-				class="bg-green-300 font-heading text-xs font-normal text-black uppercase lg:text-base"
-			>
-				<tr class="text-center">
-					<th class="py-1">No</th>
-					<th class="py-1">Nama Lengkap</th>
-					<th class="py-1">Kelas</th>
-					<th class="py-1">Pondok</th>
-				</tr>
-			</thead>
-			<tbody class="bg-gray-100 font-heading text-xs lg:text-base">
-				{#if $belumDijemput.length > 0}
-					{#each $belumDijemput as b, i}
+				</thead>
+				<tbody class="bg-gray-100 font-heading text-xs lg:text-base">
+					{#if $kedatanganPondok.length > 0}
+						{#each $kedatanganPondok as p, i}
+							<tr class="text-center">
+								<td class="px-3 py-2">{i + 1}</td>
+								<td class="py-2">{p.pondok}</td>
+								<td class="py-2">{p.jam}</td>
+							</tr>
+						{/each}
+					{:else}
 						<tr class="text-center">
-							<td class="px-3 py-2">{i + 1}.</td>
-							<td class="py-2">{b.nama}</td>
-							<td class="py-2">{b.kelas}</td>
-							<td class="px-2 py-2">{b.pondok}</td>
+							<td class="px-3 py-2">-</td>
+							<td class="py-2">None</td>
+							<td class="py-2">None</td>
 						</tr>
-					{/each}
-				{:else}
+					{/if}
+				</tbody>
+			</table>
+			<p class="mt-5 text-sm font-bold uppercase lg:text-lg dark:text-white">
+				Santri/Santriwati Yang Belum Dijemput
+			</p>
+			<table class="w-full overflow-hidden rounded-lg text-left text-sm">
+				<thead
+					class="bg-green-300 font-heading text-xs font-normal text-black uppercase lg:text-base"
+				>
 					<tr class="text-center">
-						<td class="px-3 py-2">-</td>
-						<td class="py-2">None</td>
-						<td class="py-2">None</td>
-						<td class="py-2">-</td>
+						<th class="py-1">No</th>
+						<th class="py-1">Nama Lengkap</th>
+						<th class="py-1">Kelas</th>
+						<th class="py-1">Pondok</th>
 					</tr>
-				{/if}
-			</tbody>
-		</table>
+				</thead>
+				<tbody class="bg-gray-100 font-heading text-xs lg:text-base">
+					{#if $belumDijemput.length > 0}
+						{#each $belumDijemput as b, i}
+							<tr class="text-center">
+								<td class="px-3 py-2">{i + 1}.</td>
+								<td class="py-2">{b.nama}</td>
+								<td class="py-2">{b.kelas}</td>
+								<td class="px-2 py-2">{b.pondok}</td>
+							</tr>
+						{/each}
+					{:else}
+						<tr class="text-center">
+							<td class="px-3 py-2">-</td>
+							<td class="py-2">None</td>
+							<td class="py-2">None</td>
+							<td class="py-2">-</td>
+						</tr>
+					{/if}
+				</tbody>
+			</table>
+		{/if}
 	</div>
 </main>
