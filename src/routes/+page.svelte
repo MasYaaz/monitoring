@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Bus, MapPinned, NotebookPen } from 'lucide-svelte';
+	import { Bus, MapPinned, NotebookPen, Users } from 'lucide-svelte';
 	import logoLight from '$lib/assets/logo S1.png';
 	import logoDark from '$lib/assets/logo S2.png';
 	import { isDark } from '$lib/store/darkMode';
@@ -28,26 +28,33 @@
 			{/if}
 		</div>
 		<div
-			class="grid w-full grid-cols-3 gap-4 pt-3 text-center font-heading text-xs lg:gap-10 lg:text-lg"
+			class="grid w-full grid-cols-2 gap-4 pt-3 text-center font-heading text-xs lg:gap-10 lg:text-lg"
 		>
 			<a
 				href="/tatatertib"
-				class="col-span-1 flex flex-col items-center justify-center gap-1 rounded-xl bg-green-300 px-2 py-5 font-semibold uppercase shadow-lg transition-transform duration-200 hover:scale-105 lg:py-10"
+				class="col-span-1 flex h-40 flex-col items-center justify-center gap-1 rounded-xl bg-green-300 px-2 py-5 font-semibold uppercase shadow-lg transition-transform duration-200 hover:scale-105 lg:py-10"
 			>
 				<NotebookPen size="50" />Prosedur & Tata Tertib
 			</a>
 			<a
 				href="/denah"
-				class="col-span-1 flex flex-col items-center justify-center rounded-xl bg-green-300 px-2 py-5 font-semibold uppercase shadow-lg transition-transform duration-200 hover:scale-105"
+				class="col-span-1 flex h-40 flex-col items-center justify-center rounded-xl bg-green-300 px-2 py-5 font-semibold uppercase shadow-lg transition-transform duration-200 hover:scale-105"
 			>
 				<MapPinned size="50" />
 				<p class="mt-1 w-16 lg:w-full lg:text-lg">Denah Al-Akbar</p>
 			</a>
 			<a
 				href="/jadwalkedatangan"
-				class="col-span-1 flex flex-col items-center justify-center gap-1 rounded-xl bg-green-300 px-2 py-5 font-semibold uppercase shadow-lg transition-transform duration-200 hover:scale-105"
+				class="col-span-1 flex h-40 flex-col items-center justify-center gap-1 rounded-xl bg-green-300 px-2 py-5 font-semibold uppercase shadow-lg transition-transform duration-200 hover:scale-105"
 			>
-				<Bus size="50" />Jadwal Kedatangan
+				<Bus size="50" />
+				<p class="mt-1 w-16 lg:w-full lg:text-lg">Jadwal Kedatangan</p>
+			</a>
+			<a
+				href="/datasantri"
+				class="col-span-1 flex h-40 flex-col items-center justify-center gap-1 rounded-xl bg-green-300 px-2 py-5 font-semibold uppercase shadow-lg transition-transform duration-200 hover:scale-105"
+			>
+				<Users size="50" />Data Santri
 			</a>
 		</div>
 		{#if $loading === true}

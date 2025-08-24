@@ -21,7 +21,7 @@
 	];
 </script>
 
-<main class="flex items-center px-5 md:px-8 lg:px-12 xl:px-24 dark:bg-black">
+<main class="flex w-screen items-center px-5 md:px-8 lg:px-12 xl:px-24 dark:bg-black">
 	<div class="flex min-h-screen w-full flex-col items-center py-5">
 		<div class="flex w-full max-w-4xl flex-col items-center">
 			<div

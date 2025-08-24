@@ -13,6 +13,7 @@
 		subscribeRealtime
 	} from '$lib/store/tabelStore';
 	import { notifications } from '$lib/store/notif';
+	import { goto } from '$app/navigation';
 	let audio: HTMLAudioElement;
 
 	let dark = $derived($isDark);
@@ -25,7 +26,7 @@
 	let { children } = $props();
 
 	onMount(() => {
-		audio = new Audio("/notif.wav");
+		audio = new Audio('/notif.wav');
 		loadBelumDijemput();
 		loadKedatanganPondok();
 		subscribeRealtime();
@@ -37,6 +38,10 @@
 			audio.play();
 		}
 	});
+
+	function goBack() {
+		history.length > 1 ? history.back() : goto('/'); // fallback kalau gak ada history
+	}
 </script>
 
 <svelte:head>
@@ -54,14 +59,17 @@
 
 {#if $page.url.pathname === '/admin'}
 	<!-- tombol home -->
-	<a href="/" class="fixed top-3 left-4 hover:scale-105 dark:text-white">
+	<a href="/" class="fixed top-3 left-4 hover:scale-105 hover:cursor-pointer dark:text-white">
 		<House />
 	</a>
 {:else if $page.url.pathname !== '/'}
 	<!-- tombol kembali -->
-	<a href="/" class="fixed top-3 left-4 hover:scale-105 dark:text-white">
+	<button
+		onclick={goBack}
+		class="fixed top-3 left-4 hover:scale-105 hover:cursor-pointer dark:text-white"
+	>
 		<Undo2 />
-	</a>
+	</button>
 {/if}
 
 <div class="fixed top-4 left-4 z-50 space-y-2">
