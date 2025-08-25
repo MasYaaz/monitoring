@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Bus } from 'lucide-svelte';
 
-	let bis1 = [
+	const bis1 = [
 		{ nama: 'Maulana Ghautha Permana', kelas: '1B', asal: 'Sidoarjo' },
 		{ nama: 'Hammam Abdullah', kelas: '1B', asal: 'Sidoarjo' },
 		{ nama: 'Putra Maulana Mochtar', kelas: '1C', asal: 'Bangkalan' },
@@ -46,7 +46,7 @@
 		{ nama: 'Faathir Ibnu Majid', kelas: '5F', asal: 'Sidoarjo' }
 	];
 
-	let bis2 = [
+	const bis2 = [
 		{ nama: 'Felix Basil Basyiruddin Rahman', kelas: '3B', asal: 'Surabaya' },
 		{ nama: 'Muhammad Zaidan Alfarizi', kelas: '3C', asal: 'Pasuruan' },
 		{ nama: 'Abiy El Choir', kelas: '3D', asal: 'Sidoarjo' },
