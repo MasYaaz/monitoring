@@ -4,6 +4,7 @@
 	import logoDark from '$lib/assets/logo S2.png';
 	import { isDark } from '$lib/store/darkMode';
 	import { belumDijemput, kedatanganPondok, loading } from '$lib/store/tabelStore';
+	const tombol = [{ link: '/tatatertib' }];
 </script>
 
 <main class="flex w-screen justify-center px-4 md:px-6 lg:px-12 xl:px-24">
@@ -34,7 +35,8 @@
 				href="/tatatertib"
 				class="col-span-1 flex h-40 flex-col items-center justify-center gap-1 rounded-xl bg-green-300 px-2 py-5 font-semibold uppercase shadow-lg transition-transform duration-200 hover:scale-105 lg:py-10"
 			>
-				<NotebookPen size="50" />Prosedur & Tata Tertib
+				<NotebookPen size="50" />
+				<p class="mt-1 w-20 lg:w-full lg:text-lg">Prosedur & Tata Tertib</p>
 			</a>
 			<a
 				href="/denah"
@@ -48,7 +50,7 @@
 				class="col-span-1 flex h-40 flex-col items-center justify-center gap-1 rounded-xl bg-green-300 px-2 py-5 font-semibold uppercase shadow-lg transition-transform duration-200 hover:scale-105"
 			>
 				<Bus size="50" />
-				<p class="mt-1 w-16 lg:w-full lg:text-lg">Jadwal Kedatangan</p>
+				<p class="mt-1 w-20 lg:w-full lg:text-lg">Jadwal Kedatangan</p>
 			</a>
 			<a
 				href="/datasantri"
