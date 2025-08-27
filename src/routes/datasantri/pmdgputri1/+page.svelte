@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Bus } from 'lucide-svelte';
+	import { School } from 'lucide-svelte';
 
 	const bis1 = [
 		{ nama: 'Kaela Nadia Balqis', kelas: '1 INT B' },
@@ -113,10 +113,10 @@
 			<div
 				class="flex w-full items-center justify-center gap-2 px-5 pt-6 lg:mb-5 lg:gap-5 lg:pt-10 dark:text-white"
 			>
-				<Bus class="h-20 w-20 lg:h-30 lg:w-30" />
+				<School class="h-20 w-20 lg:h-30 lg:w-30" />
 				<div class="text-center font-heading text-xl font-bold uppercase lg:text-3xl">
-					<h1>Jadwal</h1>
-					<h1>Kedatangan</h1>
+					<h1>PMDG Putri</h1>
+					<h1>Kampus Satu</h1>
 				</div>
 			</div>
 			<div class="flex w-full flex-col gap-5">
