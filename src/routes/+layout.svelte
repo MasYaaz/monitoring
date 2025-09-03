@@ -7,6 +7,7 @@
 	import { page } from '$app/stores';
 	import { fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
+	import { halaman } from '$lib/store/halamanAdmin';
 	import {
 		loadBelumDijemput,
 		loadKedatanganPondok,
@@ -49,7 +50,10 @@
 	<link rel="icon" href={faviconDark} media="(prefers-color-scheme: dark)" />
 </svelte:head>
 
-<button class="fixed top-3 right-4 hover:scale-105 dark:text-white" onclick={toggleDark}>
+<button
+	class="fixed top-3 right-4 hover:scale-105 hover:cursor-pointer dark:text-white"
+	onclick={toggleDark}
+>
 	{#if !dark}
 		<Sun />
 	{:else}
