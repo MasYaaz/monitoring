@@ -3,9 +3,14 @@
 	import { Check } from 'lucide-svelte';
 </script>
 
-<p class="mt-5 text-center text-sm font-bold uppercase lg:text-lg dark:text-white">
+<!-- <p class="mt-5 text-center text-sm font-bold uppercase lg:text-lg dark:text-white">
 	Santri/Santriwati Yang Belum Dijemput
+</p> -->
+
+<p class="mt-5 text-center text-sm font-bold uppercase lg:text-lg dark:text-white">
+	Santri/Santriwati Yang Belum Hadir
 </p>
+
 <table class="w-full overflow-hidden rounded-lg text-left text-sm">
 	<thead class="bg-green-300 font-heading text-xs font-normal text-black uppercase lg:text-base">
 		{#if $belumDijemput.length > 0}

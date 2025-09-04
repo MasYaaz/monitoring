@@ -7,7 +7,6 @@
 	import { page } from '$app/stores';
 	import { fade } from 'svelte/transition';
 	import { onMount } from 'svelte';
-	import { halaman } from '$lib/store/halamanAdmin';
 	import {
 		loadBelumDijemput,
 		loadKedatanganPondok,
@@ -63,12 +62,13 @@
 
 {#if $page.url.pathname === '/admin'}
 	<!-- tombol home -->
-	<a href="/" class="fixed top-3 left-4 hover:scale-105 hover:cursor-pointer dark:text-white">
+	<a aria-label="gohome" href="/" class="fixed top-3 left-4 hover:scale-105 hover:cursor-pointer dark:text-white">
 		<House />
 	</a>
 {:else if $page.url.pathname !== '/'}
 	<!-- tombol kembali -->
 	<button
+		aria-label="kembali"
 		onclick={goBack}
 		class="fixed top-3 left-4 hover:scale-105 hover:cursor-pointer dark:text-white"
 	>

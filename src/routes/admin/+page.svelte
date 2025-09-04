@@ -12,20 +12,20 @@
 	>
 		<button
 			onclick={() => goto('/admin/tambahorang')}
-			class="col-span-1 flex items-center justify-center gap-2 rounded-xl bg-green-300 px-5 py-5 font-semibold uppercase shadow-lg transition-transform duration-200 hover:scale-102 lg:py-10"
+			class="col-span-2 flex items-center justify-center gap-2 rounded-xl bg-green-300 px-5 py-5 font-semibold uppercase shadow-lg transition-transform duration-200 hover:scale-102 hover:cursor-pointer lg:py-10"
 		>
 			<UserPlus size="30" class="lg:h-10 lg:w-10" />
 			<p class="text-[10px] lg:text-2xl">Tambah Nama Baru</p>
 		</button>
-		<button
+		<!-- <button
 			onclick={() => goto('/admin/updatekedatangan')}
 			class="col-span-1 flex items-center justify-center gap-2 rounded-xl bg-green-300 px-5 py-5 font-semibold uppercase shadow-lg transition-transform duration-200 hover:scale-102 lg:py-10"
 		>
 			<Bus size="30" class="lg:h-10 lg:w-10" />
 			<p class="text-[10px] lg:text-2xl">Update Data Kedatangan</p>
-		</button>
+		</button> -->
 	</div>
 
 	<TabelSantriCeklis />
-	<TabelKedatangan />
+	<!-- <TabelKedatangan /> -->
 </div>

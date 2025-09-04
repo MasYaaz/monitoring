@@ -198,8 +198,6 @@
 		{ nama: 'Anggita Alvaretta', kelas: '5O' },
 		{ nama: 'Aliyah Azzahra Arieanti', kelas: '5O' },
 		{ nama: 'Ratu Raisa', kelas: '5Q' },
-		{ nama: 'Alyaa Nabiilah Hariani', kelas: '5O' },
-		{ nama: 'Gayatri Pramesita Harsanto', kelas: '5P' }
 	];
 </script>
 

@@ -24,8 +24,11 @@
 
 <div in:fade={{ duration: 300 }} class="flex w-full flex-col items-center gap-5">
 	<div class="w-full max-w-4xl gap-5 rounded-xl p-5 shadow-md">
-		<h2 class="mb-4 w-full text-center font-bold uppercase lg:text-2xl dark:text-white">
+		<!-- <h2 class="mb-4 w-full text-center font-bold uppercase lg:text-2xl dark:text-white">
 			Tambah Santri/Santriwati Belum Dijemput
+		</h2> -->
+		<h2 class="mb-4 w-full text-center font-bold uppercase lg:text-2xl dark:text-white">
+			Tambah Santri/Santriwati Belum Hadir
 		</h2>
 		<form on:submit={tambahSantri} class="space-y-3 text-lg dark:text-white">
 			<input
