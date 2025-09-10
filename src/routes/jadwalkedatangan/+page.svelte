@@ -16,17 +16,17 @@
 	// ];
 
 	let jadwalKampusPutra = [
-		{ nama: 'Gontor 1', keberangkatan: '02.00 WIB' },
-		{ nama: 'Gontor 3', keberangkatan: '02.00 WIB' },
-		{ nama: 'Gontor 4', keberangkatan: '00.00 WIB' },
-		{ nama: 'Gontor 5', keberangkatan: '01.00 WIB' },
+		{ nama: 'Gontor 1', keberangkatan: '13.00 WIB' },
+		{ nama: 'Gontor 3', keberangkatan: '14.00 WIB' },
+		{ nama: 'Gontor 4', keberangkatan: '06.00 WIB' },
+		{ nama: 'Gontor 5', keberangkatan: '09.00 WIB' },
 		{ nama: 'Gontor 6', keberangkatan: 'Opsional' }
 	];
 
 	let jadwalKampusPutri = [
-		{ nama: 'Gontor Putri 1', keberangkatan: '23.00 WIB' },
-		{ nama: 'Gontor Putri 3', keberangkatan: '02.00 WIB' },
-		{ nama: 'Gontor Putri 4', keberangkatan: '01.00 WIB' }
+		{ nama: 'Gontor Putri 1', keberangkatan: '10.00 WIB' },
+		{ nama: 'Gontor Putri 3', keberangkatan: '09.00 WIB' },
+		{ nama: 'Gontor Putri 4', keberangkatan: '09.10 WIB' }
 	];
 </script>
 

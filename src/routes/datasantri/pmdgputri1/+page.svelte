@@ -113,21 +113,25 @@
 		{ nama: 'Celena Raissa Orlin', kelas: '1-B' },
 		{ nama: 'Nadiyatul Khoir', kelas: '1-C' },
 		{ nama: 'Nur Safira Insyirah', kelas: '1-C' },
+		{ nama: 'Sayyidah Firhani', kelas: '1-D' },
+		{ nama: 'Azzalea Karunia Rahma', kelas: '1-D' },
 		{ nama: 'Naysyla Ardina', kelas: '1-F' },
 		{ nama: 'Safiya Aisyah Dewi', kelas: '1-G' },
 		{ nama: 'Nayra Rachmeida Zaibunnisa', kelas: '2-E' },
 		{ nama: 'Nayla Hana Mutiara', kelas: '2-E' },
-		{ nama: 'Naurah Talitha', kelas: '3-E' },
 		{ nama: 'Khanza Aisyah Adilla', kelas: '2-G' },
 		{ nama: 'Fahera Ecevena', kelas: '2-J' },
 		{ nama: 'Kameliyatus Sholeha', kelas: '2-J' },
 		{ nama: 'Nadine Puspita Windriya', kelas: '2-K' },
+		{ nama: 'Jihan Mahiroh', kelas: '2-L' },
 		{ nama: 'Zahra Khanza Aqilla Santoso', kelas: '3-D' },
 		{ nama: 'Azhara Rafifa', kelas: '3-D' },
 		{ nama: 'Almeera Kirana Eltsania Kusyanto', kelas: '3-D' },
+		{ nama: 'Naurah Talitha', kelas: '3-E' },
 		{ nama: 'Queenta Amira Saifana', kelas: '3-E' },
 		{ nama: 'Chelsea Oktavia Putri', kelas: '3-E' },
 		{ nama: 'Aisyah Shakira', kelas: '3-G' },
+		{ nama: 'Attaya Hafsa Aqquila', kelas: '3-K' },
 		{ nama: 'Faihana Radha Azzakirah', kelas: '3-L' },
 		{ nama: 'Nisa Nurhaniva', kelas: '3-L' },
 		{ nama: 'Miftahul Haq', kelas: '3-L' },
@@ -148,16 +152,17 @@
 		{ nama: 'Cinta Nayla', kelas: '4-H' },
 		{ nama: 'Devika Kalyani Nirwasita', kelas: '4-I' },
 		{ nama: 'Afifah Lathifatul Qolbi', kelas: '4-I' },
-		{ nama: 'Alifya Najwa Ramdhania H', kelas: '5-D' },
-		{ nama: 'Zayyana Shovia Mutmainnah', kelas: '5-E' },
-		{ nama: 'Zelda Zanita Rahman', kelas: '5-G' },
-		{ nama: 'Nayla Zahra Destiviana', kelas: '5-M' },
-		{ nama: 'Ammara Shakila Dahniar', kelas: '5-S' },
 		{ nama: 'Aisyah Ra Shofaul Qolbi', kelas: '4-J' },
 		{ nama: 'Sakhi Salma Putri Widyadana', kelas: '4-K' },
 		{ nama: 'Aisyah Nur Romadhona', kelas: '4-K' },
 		{ nama: 'Azma Nazihah', kelas: '4-K' },
-		{ nama: 'Safa Annisa', kelas: '4-L' }
+		{ nama: 'Safa Annisa', kelas: '4-L' },
+		{ nama: 'Alifya Najwa Ramdhania H', kelas: '5-D' },
+		{ nama: 'Zayyana Shovia Mutmainnah', kelas: '5-E' },
+		{ nama: 'Zelda Zanita Rahman', kelas: '5-G' },
+		{ nama: 'Zahrani', kelas: '5-K' },
+		{ nama: 'Nayla Zahra Destiviana', kelas: '5-M' },
+		{ nama: 'Ammara Shakila Dahniar', kelas: '5-S' }
 	];
 
 	const bis2 = [
@@ -165,17 +170,19 @@
 		{ nama: 'Aqiluzzada Shafa Muktamarin', kelas: '3-H' },
 		{ nama: 'Tasya Adellia Maghfirah', kelas: '3-I' },
 		{ nama: 'Athera Aesya', kelas: '3-I' },
-		{ nama: 'Attaya Hafsa Aquila', kelas: '3-K' },
 		{ nama: 'Karunia Azka Mumtaz', kelas: '4-C' },
 		{ nama: 'Safa Dwi Andi Lestari', kelas: '4-C' },
 		{ nama: 'Ghaitsa Atha Maulida', kelas: '4-D' },
+		{ nama: 'Andi fatimah Azzahra', kelas: '4-I' },
 		{ nama: 'Zahra Syita Nabila', kelas: '4-J' },
 		{ nama: 'Qouli Azkia Nasukhi', kelas: '4-J' },
 		{ nama: 'Nayeva Arfah Nejat', kelas: '5-B' },
 		{ nama: 'Nabilah Amani', kelas: '5-B' },
 		{ nama: 'Ishma Luthfiyatuz', kelas: '5-B' },
 		{ nama: 'Nadia Nur Arribah', kelas: '5-C' },
-		{ nama: 'Salsabila Fauziyyah', kelas: '5-C' }
+		{ nama: 'Salsabila Fauziyyah', kelas: '5-C' },
+		{ nama: 'Rista Ilma', kelas: '5-J' },
+		{ nama: 'Sabrina Reynata', kelas: '5-M' }
 	];
 </script>
 
@@ -183,7 +190,7 @@
 	<div class="flex min-h-screen w-full flex-col items-center py-5">
 		<div class="flex w-full max-w-4xl flex-col items-center">
 			<div
-				class="flex w-full items-center justify-center gap-2 px-5 pt-6 lg:mb-5 lg:gap-5 lg:pt-10 dark:text-white"
+				class="mb-4 flex w-full items-center justify-center gap-2 px-5 pt-6 lg:mb-5 lg:gap-5 lg:pt-10 dark:text-white"
 			>
 				<School class="h-20 w-20 lg:h-30 lg:w-30" />
 				<div class="text-center font-heading text-xl font-bold uppercase lg:text-3xl">

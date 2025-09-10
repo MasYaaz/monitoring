@@ -110,7 +110,7 @@
 	<div class="flex min-h-screen w-full flex-col items-center py-5">
 		<div class="flex w-full max-w-4xl flex-col items-center">
 			<div
-				class="flex w-full items-center justify-center gap-2 px-5 pt-6 lg:mb-5 lg:gap-5 lg:pt-10 dark:text-white"
+				class="mb-4 flex w-full items-center justify-center gap-2 px-5 pt-6 lg:mb-5 lg:gap-5 lg:pt-10 dark:text-white"
 			>
 				<School class="h-20 w-20 lg:h-30 lg:w-30" />
 				<div class="text-center font-heading text-xl font-bold uppercase lg:text-3xl">

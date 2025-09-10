@@ -88,7 +88,7 @@
 </div>
 
 {#key $page.url.pathname}
-	<div in:fade={{ duration: 300 }} class="w-full dark:bg-black">
+	<div in:fade={{ duration: 300 }} class="w-full pb-6 lg:pb-0 dark:bg-black">
 		{@render children?.()}
 	</div>
 {/key}
