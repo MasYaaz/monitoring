@@ -6,11 +6,12 @@
 	import { House, Moon, Sun, Undo2 } from 'lucide-svelte';
 	import { page } from '$app/stores';
 	import { fade } from 'svelte/transition';
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 	import {
 		loadBelumDijemput,
 		loadKedatanganPondok,
-		subscribeRealtime
+		subscribeRealtime,
+		unsubscribeRealtime
 	} from '$lib/store/tabelStore';
 	import { notifications } from '$lib/store/notif';
 	import { goto } from '$app/navigation';
@@ -30,6 +31,10 @@
 		loadBelumDijemput();
 		loadKedatanganPondok();
 		subscribeRealtime();
+	});
+
+	onDestroy(() => {
+		unsubscribeRealtime();
 	});
 
 	let lastPlayed = 0;

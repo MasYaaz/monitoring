@@ -36,7 +36,7 @@ type Santri = {
 let channels: any[] = [];
 
 export function subscribeRealtime() {
-	unsubscribeRealtime();
+	if (channels.length > 0) return;
 	// Kedatangan Pondok
 	const ch1 = supabase
 		.channel('kedatangan_pondok_changes')
