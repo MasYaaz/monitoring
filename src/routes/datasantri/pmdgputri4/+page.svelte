@@ -193,76 +193,72 @@
 	];
 </script>
 
-<main class="flex items-center px-5 md:px-8 lg:px-12 xl:px-24 dark:bg-black">
-	<div class="flex min-h-screen w-full flex-col items-center py-5">
-		<div class="flex w-full max-w-4xl flex-col items-center">
-			<div
-				class="mb-4 flex w-full items-center justify-center gap-2 px-5 pt-6 lg:mb-5 lg:gap-5 lg:pt-10 dark:text-white"
-			>
-				<School class="h-20 w-20 lg:h-30 lg:w-30" />
-				<div class="text-center font-heading text-xl font-bold uppercase lg:text-3xl">
-					<h1>PMDG Putri</h1>
-					<h1>Kampus Tiga</h1>
+<div class="flex w-full max-w-4xl flex-col items-center">
+	<div
+		class="mb-4 flex w-full items-center justify-center gap-2 px-5 pt-6 lg:mb-5 lg:gap-5 lg:pt-10 dark:text-white"
+	>
+		<School class="h-20 w-20 lg:h-30 lg:w-30" />
+		<div class="text-center font-heading text-xl font-bold uppercase lg:text-3xl">
+			<h1>PMDG Putri</h1>
+			<h1>Kampus Tiga</h1>
+		</div>
+	</div>
+	<div class="flex w-full flex-col gap-5">
+		<div class="flex flex-col gap-2">
+			<div class="flex flex-col gap-2">
+				<div>
+					<h3 class="text-center font-heading text-lg font-bold lg:text-xl dark:text-white">
+						Absen Bis 1
+					</h3>
 				</div>
+				<table class="w-full overflow-hidden rounded-md text-left text-sm">
+					<thead
+						class="bg-green-300 font-heading text-xs font-normal text-black uppercase lg:text-base"
+					>
+						<tr class="text-center">
+							<th class="py-1">No.</th>
+							<th class="py-1">Nama</th>
+							<th class="py-1">Kelas</th>
+						</tr>
+					</thead>
+					<tbody class="bg-gray-100 font-heading text-xs lg:text-base">
+						{#each bis1 as b, i}
+							<tr class="text-center">
+								<td class="px-2 py-2">{i + 1}.</td>
+								<td class="py-2 text-left">{b.nama}</td>
+								<td class="px-1 py-2">{b.kelas}</td>
+							</tr>
+						{/each}
+					</tbody>
+				</table>
 			</div>
-			<div class="flex w-full flex-col gap-5">
-				<div class="flex flex-col gap-2">
-					<div class="flex flex-col gap-2">
-						<div>
-							<h3 class="text-center font-heading text-lg font-bold lg:text-xl dark:text-white">
-								Absen Bis 1
-							</h3>
-						</div>
-						<table class="w-full overflow-hidden rounded-md text-left text-sm">
-							<thead
-								class="bg-green-300 font-heading text-xs font-normal text-black uppercase lg:text-base"
-							>
-								<tr class="text-center">
-									<th class="py-1">No.</th>
-									<th class="py-1">Nama</th>
-									<th class="py-1">Kelas</th>
-								</tr>
-							</thead>
-							<tbody class="bg-gray-100 font-heading text-xs lg:text-base">
-								{#each bis1 as b, i}
-									<tr class="text-center">
-										<td class="px-2 py-2">{i + 1}.</td>
-										<td class="py-2 text-left">{b.nama}</td>
-										<td class="px-1 py-2">{b.kelas}</td>
-									</tr>
-								{/each}
-							</tbody>
-						</table>
-					</div>
-					<div class="flex flex-col gap-2">
-						<div>
-							<h3 class="text-center font-heading text-lg font-bold lg:text-xl dark:text-white">
-								Absen Bis 2
-							</h3>
-						</div>
-						<table class="w-full overflow-hidden rounded-md text-left text-sm">
-							<thead
-								class="bg-green-300 font-heading text-xs font-normal text-black uppercase lg:text-base"
-							>
-								<tr class="text-center">
-									<th class="py-1">No.</th>
-									<th class="py-1">Nama</th>
-									<th class="py-1">Kelas</th>
-								</tr>
-							</thead>
-							<tbody class="bg-gray-100 font-heading text-xs lg:text-base">
-								{#each bis2 as b, i}
-									<tr class="text-center">
-										<td class="px-2 py-2">{i + 1}.</td>
-										<td class="py-2 text-left">{b.nama}</td>
-										<td class="px-1 py-2">{b.kelas}</td>
-									</tr>
-								{/each}
-							</tbody>
-						</table>
-					</div>
+			<div class="flex flex-col gap-2">
+				<div>
+					<h3 class="text-center font-heading text-lg font-bold lg:text-xl dark:text-white">
+						Absen Bis 2
+					</h3>
 				</div>
+				<table class="w-full overflow-hidden rounded-md text-left text-sm">
+					<thead
+						class="bg-green-300 font-heading text-xs font-normal text-black uppercase lg:text-base"
+					>
+						<tr class="text-center">
+							<th class="py-1">No.</th>
+							<th class="py-1">Nama</th>
+							<th class="py-1">Kelas</th>
+						</tr>
+					</thead>
+					<tbody class="bg-gray-100 font-heading text-xs lg:text-base">
+						{#each bis2 as b, i}
+							<tr class="text-center">
+								<td class="px-2 py-2">{i + 1}.</td>
+								<td class="py-2 text-left">{b.nama}</td>
+								<td class="px-1 py-2">{b.kelas}</td>
+							</tr>
+						{/each}
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>
-</main>
+</div>

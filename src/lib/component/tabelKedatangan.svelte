@@ -3,9 +3,9 @@
 	import { Trash } from 'lucide-svelte';
 </script>
 
-<p class="mt-5 mb-1 text-sm font-bold uppercase text-center lg:text-lg dark:text-white">
+<h4 class="mt-5 mb-1 text-sm font-bold uppercase text-center lg:text-lg dark:text-white">
 	Pondok Yang Sudah Datang
-</p>
+</h4>
 <table class="w-full overflow-hidden rounded-lg text-left text-sm">
 	<thead class="bg-green-300 font-heading text-xs font-normal text-black uppercase lg:text-base">
 		{#if $kedatanganPondok.length > 0}
